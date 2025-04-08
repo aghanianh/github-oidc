@@ -1,23 +1,29 @@
+# GitHub Actions + AWS OIDC Integration
+
 This project demonstrates how to set up a GitHub Actions workflow that uses OpenID Connect (OIDC) for secure authentication with AWS. The integration allows GitHub Actions workflows to assume an AWS IAM role without the need to store AWS access keys, providing secure, short-lived credentials for AWS resource access.
 
-Requirements
-AWS account with appropriate IAM permissions
+---
 
-GitHub repository (personal or organization)
+## 🚀 Requirements
 
-Terraform to manage AWS resources
+- **AWS Account**: An AWS account with appropriate IAM permissions.
+- **GitHub Repository**: A personal or organization GitHub repository.
+- **Terraform**: Used for managing AWS resources.
+- **GitHub Actions**: For automating workflows and integrating with AWS.
 
-GitHub Actions for automation
+---
 
-Setup Overview
+## 🔧 Setup Overview
+
 This project includes:
 
-Terraform Configuration:
+### 1. **Terraform Configuration**
 
-aws_iam_openid_connect_provider resource to establish the connection between GitHub Actions and AWS using OIDC.
+- **`aws_iam_openid_connect_provider`**: Establishes the connection between GitHub Actions and AWS using OIDC.
+- **`aws_iam_role`** & **`aws_iam_role_policy_attachment`**: Defines and assigns the appropriate IAM role and permissions for GitHub Actions workflows.
 
-aws_iam_role and aws_iam_role_policy_attachment to define and assign the appropriate IAM role and permissions for GitHub Actions workflows.
+### 2. **GitHub Actions Workflow**
 
-GitHub Actions Workflow:
+A **GitHub Actions** workflow that uses the `aws-actions/configure-aws-credentials` action to authenticate using OIDC and interact with AWS services.
 
-A GitHub Actions workflow that uses the aws-actions/configure-aws-credentials action to authenticate using OIDC and interact with AWS services.
+---
