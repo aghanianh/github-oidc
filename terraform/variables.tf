@@ -13,6 +13,6 @@ variable "github_org" {
 variable "github_repo" {
   type        = string
   description = "The name of the GitHub repository."
-  default     = "argocd-proj"
+  default     = "github-oidc"
 }
 
